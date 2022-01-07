@@ -78,17 +78,22 @@ class threejsViewer {
                 let mesh = new MarchingCubes(this.size)
                 mesh.name = 'mesh'
 
-                // if (this.textureOption == 0) {
-                //     mesh.material = 
-                // }
-                // else if (this.textureOption == 1) {
-                //     mesh.material = 
-                // }
-
+                switch (this.textureOption) {
+                    case 0:
+                        mesh.material = new THREE.MeshBasicMaterial({ color: 0xff00ff })
+                    case 1:
+                        mesh.material = new THREE.MeshPhongMaterial({ color: 0xff00ff })
+                    case 2:
+                        mesh.material = new THREE.MeshToonMaterial({ color: 0xff00ff })                    
+                    case 3:
+                        mesh.material = new THREE.MeshNormalMaterial({color: 0xff00ff})
+                }
                 mesh.isolation = this.threshold
                 mesh.filed = this.databuffer
-                
+                mesh.position.set(0,1,0)
+
                 this.scene.add(mesh)
+                return mesh
             }
             
         }
