@@ -87,7 +87,8 @@ class threejsViewer {
 
                 mesh.isolation = this.threshold
                 mesh.filed = this.databuffer
-                return mesh
+                
+                this.scene.add(mesh)
             }
             
         }
