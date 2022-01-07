@@ -172,8 +172,8 @@
             //addChild 要比 renderModal 先呼叫
             so.addChild("讀取文件並顯示資訊", 4, true);
             so.addChild("生成模型", 2, true);
-            so.addChild("閥值控制", 1, false);
-            so.addChild("文件下載", 1, false);
+            so.addChild("閥值控制", 1, true);
+            so.addChild("文件下載", 1, true);
             so.addChild("材質更換", 2, false);
 
             //產生自評表，參數如下所示
@@ -208,6 +208,7 @@
 
         import { threejsViewer } from './jsm/threejsViewer.js'
         import { PLYExporter } from "./threejs/examples/jsm/exporters/PLYExporter.js";
+        import { STLExporter } from "./threejs/examples/jsm/exporters/STLExporter.js";
 
         const fileRegex = /(\w+)_(\d+)x(\d+)x(\d+)_(\w+)\.*/;
 
@@ -235,7 +236,6 @@
             })
 
             let elements = document.getElementsByName('settingForm')
-
 
             // RAW文件讀取
             elements[0].addEventListener('change', (evt) => {
